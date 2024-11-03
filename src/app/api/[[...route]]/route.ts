@@ -1,3 +1,4 @@
+
 import { Redis } from '@upstash/redis/cloudflare'
 import { Hono } from "hono";
 import { cors } from "hono/cors";
@@ -50,7 +51,7 @@ app.get("/search", async (c) => {
     );
     } catch (error) {
         return c.json(
-            { message: 'Something BAD happened', results: [] },
+            { message: 'Something BAD happened'+error, results: [] },
             { status: 500 }
         );
     }
